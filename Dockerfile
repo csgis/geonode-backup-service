@@ -21,7 +21,6 @@ ENV TZ Europe/Amsterdam
 ADD crontab crontab.envsubst
 ADD docker-entrypoint.sh /
 ADD backup.sh /
-CMD chmod a+x /backup.sh
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
