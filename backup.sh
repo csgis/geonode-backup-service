@@ -24,7 +24,7 @@ rclone copy /geonode_statics ${SPTH} --log-level ERROR && echo "geonode_statics 
 rclone copy /geoserver-data-dir ${GPTH} --log-level ERROR && echo "geoserver-data-dir copied successfully"
 
 # create archive
-tar cvfj /backups/bba-geonode.tar.bz2 ${BPTH} && rm -R ${BPTH}
+tar cvfj /backups/bba-geonode.tar_$NOW.bz2 ${BPTH} && rm -R ${BPTH}
 
 # Delete old
 find /backups -maxdepth 1  -mtime +${DAYS_TO_KEEP} -exec rm -rf {} \; && echo "Clean of /backups dir done"
