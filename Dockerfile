@@ -20,6 +20,8 @@ ENV TZ Europe/Amsterdam
 # The entrypoint creates the certificate
 ADD crontab crontab.envsubst
 ADD docker-entrypoint.sh /
+ADD backup.sh /
+CMD chmod a+x /backup.sh
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
